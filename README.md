@@ -1,3 +1,30 @@
+## ⚙️ Configuração do Ambiente Local
+
+Para que o Auditor Ativo funcione corretamente em sua máquina Kali Linux, siga estes passos:
+
+1. **Instalação do Motor Cognitivo (Ollama):**
+   - Certifique-se de ter o [Ollama](https://ollama.com/) instalado.
+   - Puxe o modelo Coder necessário para a análise:
+     ```bash
+     ollama pull qwen2.5-coder:3b
+     ```
+
+2. **Preparação do Buffer de Tráfego:**
+   O sistema utiliza um sistema de arquivos para comunicação entre módulos. Garanta que o diretório de comunicação exista:
+   ```bash
+   sudo mkdir -p /tmp/traffic_buffer
+   sudo chmod 777 /tmp/traffic_buffer
+Dependências do Python:
+Certifique-se de estar com seu ambiente virtual (venv) ativo e as bibliotecas instaladas:
+
+Bash
+pip install requests
+Execução:
+Inicie o auditor no terminal:
+
+Bash
+python3 auditor_ativo.py
+
 # Auditor Ativo (Motor Cognitivo)
 
 O **Auditor Ativo** é o módulo de inspeção profunda de pacotes (DPI) e análise cognitiva do ecossistema de defesa cibernética *SegurancaComIA*. Ele foi projetado para atuar como uma camada de análise inteligente, capaz de ler o conteúdo bruto do tráfego de rede e emitir vereditos de segurança utilizando modelos de linguagem local.
